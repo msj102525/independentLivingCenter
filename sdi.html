@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1">
+<title>서울장애인자립생활센터</title>
+<link rel="stylesheet" href="http://www.scil.or.kr/scil/theme/basic/css/default.css">
+<link rel="stylesheet" href="http://www.scil.or.kr/scil/skin/latest/wrapper/css/style.css">
+<!--[if lte IE 8]>
+<script src="http://www.scil.or.kr/scil/js/html5.js"></script>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "http://www.scil.or.kr/scil";
+var g5_bbs_url   = "http://www.scil.or.kr/scil/bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+</script>
+<script src="http://www.scil.or.kr/scil/js/jquery-1.8.3.min.js"></script>
+<script src="http://www.scil.or.kr/scil/js/jquery.menu.js"></script>
+<script src="http://www.scil.or.kr/scil/js/common.js"></script>
+<script src="http://www.scil.or.kr/scil/js/wrest.js"></script>
+
+</head>
+<body>
+
+<!-- 상단 시작 { -->
+<div id="hd">
+    <h1 id="hd_h1">서울장애인자립생활센터</h1>
+
+    
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+    <h2>팝업레이어 알림</h2>
+
+<span class="sound_only">팝업레이어 알림이 없습니다.</span></div>
+
+<script>
+$(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+</script>
+<!-- } 팝업레이어 끝 -->
+<script type="text/javascript">
+/* 화면 확대 축소 시작 IE 전용 */
+ var nowZoom = 100; // 현재비율
+ var maxZoom = 200; // 최대비율(500으로하면 5배 커진다)
+ var minZoom = 80; // 최소비율
+
+ //화면 키운다.
+ function zoomIn() {
+  if (nowZoom < maxZoom) {
+   nowZoom += 10; //25%씩 커진다.
+  } else {
+   return;
+  }
+
+  document.body.style.zoom = nowZoom + "%";
+ }
+
+ //화면 줄인다.
+ function zoomOut() {
+  if (nowZoom > minZoom) {
+   nowZoom -= 10; //25%씩 작아진다.
+  } else {
+   return;
+  }
+
+  document.body.style.zoom = nowZoom + "%";
+ }
+
+/* 화면 확대 축소 끝 */
+</script>
+
+<!-- 탑메뉴 링크부분 -->
+<link rel="stylesheet" href="http://www.scil.or.kr/scil/css/style.css">
+<script type="text/javascript">
+<!--//
+	$(function() {
+
+		$('.main_cat').mouseover(function(){
+			menu_code= $(this).attr('code');
+			showSubMenu(menu_code);
+		}).mouseout(function(){
+			//
+		}).keyup(function(event){
+			if(event.keyCode == 9){
+				menu_code= $(this).attr('code');
+				showSubMenu(menu_code);
+			}
+		});
+
+		$('.top_guide').mouseleave(function(){
+			
+		$(".top_guide").css("height","30");
+			$(".top_sub_menu").slideUp("fast");
+		});
+
+	});
+
+	function showSubMenu(code){
+		/*$('.top_sub_menu').each(function(){
+			if($(this).attr('code') == code){
+				$(this).show();
+			}else{
+				$(this).hide();
+			}
+		});*/
+		$(".top_guide").css("height","280");
+		$('.top_sub_menu').slideDown("fast");
+		$('.main_cat li[class="cat"]').each(function(i){
+
+			var num = i+1;
+			if($(this).attr('code')==code){
+				$('.main_cat li[code="'+code+'"] images:first').attr('src','http://www.scil.or.kr/scil/images/top_menu_roll'+code+'.png');
+			}else{
+				$('.main_cat li[code="'+num+'"] images:first').attr('src','http://www.scil.or.kr/scil/images/top_menu'+num+'.png');
+			}
+		});
+	}
+//-->
+</script>
+
+<div id="layout_top">
+  <div id="layout_top_in">
+    <div id="layout_top_logo"><h1><a href="http://www.scil.or.kr/scil"><img src="http://www.scil.or.kr/scil/images/top_logo.png" alt="서울장애인자립생활센터"></a></h1></div>
+	<div id="layout_login">
+	  <ul class="login_info">
+		<li><a href="http://www.scil.or.kr/scil">홈</a> |&nbsp;</li>
+				<li><a href="http://www.scil.or.kr/scil/bbs/login.php">로그인</a> |&nbsp;</li>
+		<li><a href="http://www.scil.or.kr/scil/bbs/register.php">회원가입</a></li>
+			  </ul>
+	</div>
+  </div>
+  <div id="layout_top_menu">
+    <div id="layout_top_menu_in"><div class="top_guide">
+  <div class="top_menu">
+	<ul class="main_cat">
+	  <li class="cat" code="1"><a href="http://www.scil.or.kr/scil/sub01.php" class="rollover"><img src="http://www.scil.or.kr/scil/images/top_menu_01.png" alt="SCIL소개"><img src="http://www.scil.or.kr/scil/images/top_menu_roll_01.png" alt="SCIL소개" class="over"></a>
+		<ul class="top_sub_menu menu_1" code='1'>
+		  <li><a href="http://www.scil.or.kr/scil/sub01.php#01">운영법인과 운영위원회</a></li>
+		  <li><a href="http://www.scil.or.kr/scil/sub01.php#02" style="letter-spacing:-1px;">미션과 비젼,직원행동강령</a></li>
+		  <li><a href="http://www.scil.or.kr/scil/sub01.php#03">대표인사 및 조직 소개</a></li>
+		  <li><a href="http://www.scil.or.kr/scil/sub01.php#04">걸어온 길</a></li>
+		  <li><a href="http://www.scil.or.kr/scil/sub01.php#05">로고와 내부안내</a></li>
+		  <li><a href="http://www.scil.or.kr/scil/sub01.php#06">오시는 길</a></li>
+		</ul>
+	  </li>
+	  <li class="cat" code="2"><a href="http://www.scil.or.kr/scil/sub07.php" class="rollover"><img src="http://www.scil.or.kr/scil/images/top_menu_02.png" alt="자립생활서비스"><img src="http://www.scil.or.kr/scil/images/top_menu_roll_02.png" alt="자립생활서비스" class="over"></a>
+		<ul class="top_sub_menu menu_2" code='2'>
+		  <li><a href="http://www.scil.or.kr/scil/sub07.php">자립생활이란?</a></li>
+  		  <li><a href="http://www.scil.or.kr/scil/sub07_01.php">자립생활서비스 안내</a></li>
+		</ul>
+	  </li>
+	  <li class="cat" code="3"><a href="http://www.scil.or.kr/scil/sub02.php" class="rollover"><img src="http://www.scil.or.kr/scil/images/top_menu_03.png" alt="활동지원서비스"><img src="http://www.scil.or.kr/scil/images/top_menu_roll_03.png" alt="활동지원서비스" class="over"></a>
+		<ul class="top_sub_menu menu_3" code='3'>
+		  <li><a href="http://www.scil.or.kr/scil/sub02.php">활동지원제도 안내</a></li>
+   		  <li><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_09">활동지원 게시판</a></li>
+		  <li><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_07">활동지원 연결</a></li>
+		  <li><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_08">활동지원 자료실</a></li>
+		</ul>
+	  </li>
+	  <li class="cat" code="4"><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_01" class="rollover"><img src="http://www.scil.or.kr/scil/images/top_menu_04.png" alt="커뮤니티"><img src="http://www.scil.or.kr/scil/images/top_menu_roll_04.png" alt="커뮤니티" class="over"></a>
+		<ul class="top_sub_menu menu_4" code='4'>
+		  <li><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_01">공지사항</a></li>
+		  <li><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_02">자유게시판</a></li>
+		  <li><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_03">센터이모저모</a></li>
+		</ul>
+	  </li>
+	  <li class="cat" code="5"><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_04" class="rollover"><img src="http://www.scil.or.kr/scil/images/top_menu_05.png" alt="소식"><img src="http://www.scil.or.kr/scil/images/top_menu_roll_05.png" alt="소식" class="over"></a>
+		<ul class="top_sub_menu menu_5" code='5'>
+		  <li><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_04">센터간행물</a></li>
+		  <li><a href="http://www.scil.or.kr/scil/sub04.php?ConnectId=scil0313">정보뉴스</a></li>
+		</ul>
+	  </li>
+	  <li class="cat" code="6"><a href="http://www.scil.or.kr/scil/sub06.php" class="rollover"><img src="http://www.scil.or.kr/scil/images/top_menu_06.png" alt="English"><img src="http://www.scil.or.kr/scil/images/top_menu_roll_06.png" alt="English" class="over"></a>
+		<ul class="top_sub_menu menu_6" code='6'>
+		  <li><a href="http://www.scil.or.kr/scil/sub06.php">English</a></li>
+		</ul>
+	  </li>
+	</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+
+
+
+<!-- 탑메뉴 링크부분 끝 -->
+
+</div>
+<!-- 내용 시작 -->
+
+<div style="width:100%;">
+  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td valign="top" style="background:url(images/in_img_bg_01.jpg) no-repeat top right;">&nbsp;</td>
+      <td width="1020" valign="top" style="background:url(images/in_img_bg_02.jpg) no-repeat top center;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><img src="images/in_bb_01.jpg" alt="" width="1020" height="17" /></td>
+        </tr>
+        <tr>
+          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="711" valign="top"><link rel="stylesheet" href="http://www.scil.or.kr/scil/skin/latest/main_gal/css/font-awesome.min.css">
+<style>
+	#slidesbo_03 {
+		display: none;
+	}
+
+	.slidesjs-navigation {
+		margin-top:3px;
+	}
+
+	.slidesjs-previous {
+		margin-right: 5px;
+	 
+	}
+
+	.slidesjs-next {
+		margin-right: 5px;
+		
+	}
+
+	.slidesjs-pagination {
+		margin: 6px 0 0;
+		float: right;
+		list-style: none;
+	}
+
+	.slidesjs-pagination li {
+		float: left;
+		margin: 0 1px;
+	}
+
+	.slidesjs-pagination li a {
+		display: block;
+		width: 13px;
+		height: 0;
+		padding-top: 13px;
+		background-image: url("http://www.scil.or.kr/scil/skin/latest/main_gal/img/pagination.png");
+		background-position: 0 0;
+		float: left;
+		overflow: hidden;
+	}
+
+	.slidesjs-pagination li a.active,
+	.slidesjs-pagination li a:hover.active {
+		background-position: 0 -13px
+	}
+
+	.slidesjs-pagination li a:hover {
+		background-position: 0 -26px
+	}
+
+</style>
+<div style="width:711px;position:relative;">
+<div id="slidesbo_03" >
+<img src="http://www.scil.or.kr/scil/data/file/bo_03/31250886_f8s2g6y4_b17bd922d0a77ac7c02f1f588dab79d72427cfe4.jpg" alt="12월 문화여가의 날" style='width:711px;height:359px;'><img src="http://www.scil.or.kr/scil/data/file/bo_03/31250886_09KRYcDX_296194f8a66f78f7607092c05bb2dd705ba1d625.jpg" alt="12월 장애인권교육" style='width:711px;height:359px;'><img src="http://www.scil.or.kr/scil/data/file/bo_03/31250886_VovCXfYu_942181c5b2929211ad0957d82ccbad305956adab.jpg" alt="12월 보치아 자조모임" style='width:711px;height:359px;'><img src="http://www.scil.or.kr/scil/data/file/bo_03/31250886_6AM51zvi_348de8f5069be5ea36a74b407ec0e3ed471a0543.jpg" alt="자조모임 리더 워크샵" style='width:711px;height:359px;'><img src="http://www.scil.or.kr/scil/data/file/bo_03/31250886_YAk2RZSu_2cfb21ca9ac8a56bd1fd807c91f9467c8fc2a284.jpg" alt="12월 여성공감 자조모임" style='width:711px;height:359px;'><a href="#" style="position:absolute;top:168.5px;z-index:999;left:20px;" class="slidesjs-previous slidesjs-navigation" ><img src="http://www.scil.or.kr/scil/skin/latest/main_gal/img//btn_prev.png" alt=""></a>
+<a href="#" style="position:absolute;top:168.5px;z-index:999;right:20px;" class="slidesjs-next slidesjs-navigation" ><img src="http://www.scil.or.kr/scil/skin/latest/main_gal/img/btn_next.png" alt=""></a>
+
+</div>
+</div>
+<script src="http://www.scil.or.kr/scil/skin/latest/main_gal/js/jquery.slides.min.js"></script>
+<script>
+	$(function() {
+		$('#slidesbo_03').slidesjs({
+			width: 711,
+			height: 359,
+			navigation: false,
+			pagination: false,
+			play: {
+			active: false,
+				// [boolean] Generate the play and stop buttons.
+				// You cannot use your own buttons. Sorry.
+			effect: "slide",
+				// [string] Can be either "slide" or "fade".
+			interval: 4000,
+				// [number] Time spent on each slide in milliseconds.
+			auto: true,
+				// [boolean] Start playing the slideshow on load.
+			swap: true,
+				// [boolean] show/hide stop and play buttons
+			pauseOnHover: false,
+				// [boolean] pause a playing slideshow on hover
+			restartDelay: 2500
+				// [number] restart delay on inactive slideshow
+			}
+		});
+	});
+</script></td>
+              <td width="26" rowspan="2" valign="top"><img src="images/in_img_box_03.jpg" alt="" width="26" height="374" /></td>
+              <td width="283" rowspan="2" valign="top">
+			  <iframe src="//www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/Scil-서울장애인자립생활센터-212018312144174&width=283&height=351&colorscheme=light&show_faces=true&header=false&stream=true&show_border=false" scrolling="yes" frameborder="0" style="border:none; overflow:hidden; width:283px; height:351px;" allowTransparency="true"></iframe></td>
+            </tr>
+            <tr>
+              <td valign="top">&nbsp;</td>
+              </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top"><a href="bbs/board.php?bo_table=bo_01"><img src="images/in_notice_01.jpg" alt="" width="317" height="36" border="0" /></a></td>
+              <td valign="top"><a href="sub04.php?ConnectId=scil0313"><img src="images/in_notice_02.jpg" alt="" width="317" height="36" border="0" /></a></td>
+              <td valign="top"><a href="bbs/board.php?bo_table=bo_04"><img src="images/in_notice_03.jpg" alt="" width="386" height="36" border="0" /></a></td>
+            </tr>
+            <tr>
+              <td height="161" valign="top" background="images/in_notice_04.jpg"><div style="padding:0px 10px 0px 15px;">﻿
+<link rel="stylesheet" href="http://www.scil.or.kr/scil/skin/latest/all.new/style.css">
+
+<section class="n_latest_wrap">
+    <ul>
+        <li class="n_list">
+      <a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_01&amp;wr_id=660" title="2023년 결산 및 2024년 예산">2023년 결산 및 2024년 예산</a><span class="n_icon">   <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_file.gif" alt="첨부파일">  </span><span class="n_date">08-22</span>    </li>
+        <li class="n_list">
+      <a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_01&amp;wr_id=659" title="(긴급)서울장애인자립생활센터 직원채용공고">(긴급)서울장애인자립생활센터 직원채용…</a><span class="n_icon">  <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_hot.gif" alt="인기글">  </span><span class="n_date">07-25</span>    </li>
+        <li class="n_list">
+      <a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_01&amp;wr_id=655" title="서울장애인자립생활센터 시설장 채용 재공고">서울장애인자립생활센터 시설장 채용 재…</a><span class="n_icon">  <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_hot.gif" alt="인기글"> <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_file.gif" alt="첨부파일">  </span><span class="n_date">03-20</span>    </li>
+        <li class="n_list">
+      <a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_01&amp;wr_id=654" title="서울장애인자립생활센터 시설장 채용 공">서울장애인자립생활센터 시설장 채용 공</a><span class="n_icon">  <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_hot.gif" alt="인기글"> <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_file.gif" alt="첨부파일">  </span><span class="n_date">03-08</span>    </li>
+        <li class="n_list">
+      <a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_01&amp;wr_id=653" title=" (긴급) 멤버 채용 공고"> (긴급) 멤버 채용 공고</a><span class="n_icon">  <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_hot.gif" alt="인기글">  </span><span class="n_date">02-29</span>    </li>
+      </ul>
+  </section>
+</div></td>
+              <td height="161" valign="top" background="images/in_notice_05.jpg">
+			  <div id="divscil0313" style="padding-top:10px;">
+			  <script type="text/javascript" src="http://www.ablenews.co.kr/AbleWindow/LiveService/js/serviceoption.js"></script>
+			  <script type="text/javascript">GetInfoOption('scil0313', '에이블 윈도우',300, 140, 6, 180, '000000','false','false');</script></div>
+			  </td>
+              <td height="161" align="center" valign="middle" background="images/in_notice_06.jpg"><div style="padding:0px 5px 0px 5px;"><script type="text/javascript" src="http://www.scil.or.kr/scil/skin/latest/wrapper/js/wrapper.js"></script>
+<script type="text/javascript" charset="utf-8">
+	$(window).load(function(){
+		var thumbnail = {
+			imgIncrease : 100, 
+			effectDuration : 400, 
+			imgWidth : $('.thumbnailWrapper ul li').find('img').width(), 
+			imgHeight : $('.thumbnailWrapper ul li').find('img').height() 			
+		};		
+		$('.thumbnailWrapper ul li').css({ 			
+			'width' : thumbnail.imgWidth, 
+			'height' : thumbnail.imgHeight 			
+		});		
+		$('.thumbnailWrapper ul li').hover(function(){			
+			$(this).find('img').stop().animate({				
+				width: parseInt(thumbnail.imgWidth) + thumbnail.imgIncrease,
+				left: thumbnail.imgIncrease/2*(-1),
+				top: thumbnail.imgIncrease/2*(-1)				
+			},{ 				
+				"duration": thumbnail.effectDuration,
+				"queue": false				
+			});						
+			$(this).find('.caption:not(:animated)').slideDown(thumbnail.effectDuration);
+		}, function(){		
+			$(this).find('img').animate({				
+				width: thumbnail.imgWidth,
+				left: 0,
+				top: 0				
+			}, thumbnail.effectDuration);			
+			$(this).find('.caption').slideUp(thumbnail.effectDuration);			
+		});		
+	});
+</script>
+<div class='thumbnailWrapper'>
+	<div id="overlay" class="overlay"></div>
+	<ul>
+				<li><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_04&amp;wr_id=40""><img src="http://www.scil.or.kr/scil/data/editor/2107/thumb-b7ccdd610f278d2dd560137f68214961_1625646112_6024_184x150.jpg" width="184" height="150" alt="wi…"></a><div class='caption'><p class='captionInside'>wi…</p></div></li>
+		<div id='boxpopup0' class='box'><a onclick='closeOffersDialog("boxpopup$i");' class='boxclose'></a><div id='pp_content'><p><img src="http://www.scil.or.kr/scil/data/editor/2107/b7ccdd610f278d2dd560137f68214961_1625646112_6024.jpg" title="b7ccdd610f278d2dd560137f68214961_1625646112_6024.jpg"><br style="clear:both;">&nbsp;</p></div></div>
+				<li><a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_04&amp;wr_id=39""><img src="http://www.scil.or.kr/scil/data/editor/2101/thumb-5ab24f50a1a662662f3080a41e5b7625_1611628167_5424_184x150.jpg" width="184" height="150" alt="wi…"></a><div class='caption'><p class='captionInside'>wi…</p></div></li>
+		<div id='boxpopup1' class='box'><a onclick='closeOffersDialog("boxpopup$i");' class='boxclose'></a><div id='pp_content'><p><img src="http://www.scil.or.kr/scil/data/editor/2101/5ab24f50a1a662662f3080a41e5b7625_1611628167_5424.jpg" title="5ab24f50a1a662662f3080a41e5b7625_1611628167_5424.jpg"><br style="clear:both;">&nbsp;</p></div></div>
+					
+		<div class='clear'></div>
+	</ul>
+</div>
+
+
+</div></td>
+            </tr>
+            <tr>
+              <td valign="top"><a href="bbs/board.php?bo_table=bo_07"><img src="images/in_notice_07.jpg" alt="" width="317" height="37" border="0" /></a></td>
+              <td colspan="2" rowspan="2" valign="top"><table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td><img src="images/in_notice_08.jpg" alt="" width="175" height="196" border="0" /></td>
+                  <td><a href="http://www.scil.or.kr/scil/form_mail/mail.htm" target="_blank"><img src="images/in_notice_09.jpg" alt="" width="176" height="196" border="0" /></a></td>
+                  <td><a href="http://www.scil.or.kr/scil/form_mail/qna.htm" target="_blank"><img src="images/in_notice_10.jpg" alt="" width="175" height="196" border="0" /></a></td>
+                  <td><a href="sub05.php"><img src="images/in_notice_11.jpg" alt="" width="177" height="196" border="0" /></a></td>
+                </tr>
+              </table></td>
+              </tr>
+            <tr>
+              <td height="159" valign="top" background="images/in_notice_12.jpg"><div style="padding:0px 10px 0px 15px;">﻿
+<link rel="stylesheet" href="http://www.scil.or.kr/scil/skin/latest/all.new/style.css">
+
+<section class="n_latest_wrap">
+    <ul>
+        <li class="n_list">
+      <a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_07&amp;wr_id=214" title="2020년부터 홈페이지 매칭요청 게시하지 않습니다. ">2020년부터 홈페이지 매칭요청 게시…</a><span class="n_icon">  <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_hot.gif" alt="인기글">  </span><span class="n_date">01-23</span>    </li>
+        <li class="n_list">
+      <a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_07&amp;wr_id=213" title="19년11월12일 미매칭이용자 안내">19년11월12일 미매칭이용자 안내</a><span class="n_icon">  <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_hot.gif" alt="인기글">  </span><span class="n_date">11-12</span>    </li>
+        <li class="n_list">
+      <a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_07&amp;wr_id=211" title="19년10월30일 미매칭이용자 안내">19년10월30일 미매칭이용자 안내<span class="n_list_cmt">(<span class="cnt_cmt">1</span>)</span></a><span class="n_icon">  <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_hot.gif" alt="인기글">  </span><span class="n_date">11-04</span>    </li>
+        <li class="n_list">
+      <a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_07&amp;wr_id=208" title="19년10월14일 미매칭이용자 안내">19년10월14일 미매칭이용자 안내<span class="n_list_cmt">(<span class="cnt_cmt">2</span>)</span></a><span class="n_icon">  <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_hot.gif" alt="인기글">  </span><span class="n_date">10-14</span>    </li>
+        <li class="n_list">
+      <a href="http://www.scil.or.kr/scil/bbs/board.php?bo_table=bo_07&amp;wr_id=206" title="19년9월18일 미매칭 이용자 안내">19년9월18일 미매칭 이용자 안내<span class="n_list_cmt">(<span class="cnt_cmt">1</span>)</span></a><span class="n_icon">  <img src="http://www.scil.or.kr/scil/skin/latest/all.new/img/icon_hot.gif" alt="인기글">  </span><span class="n_date">09-18</span>    </li>
+      </ul>
+  </section>
+</div></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table></td>
+      <td valign="top" style="background:url(images/in_img_bg_03.jpg) no-repeat top left;">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+
+<div style="width:100%; position:relative;">
+<!--
+  <div style="width:1020px; margin:0 auto; position:relative; top:-7px;">
+    ﻿
+<script type="text/javascript">
+var sliderwidth="100%"  //스크롤 가로 사이즈
+var sliderheight="35px"  //스크롤 세로 사이즈
+var slidespeed="1"  
+slidebgcolor="transparent"  // 배경색을 주시려면 #99cc00 등과 같이 바꾸시면 됩니다 !
+
+var leftarrowimage = "http://www.scil.or.kr/scil/skin/latest/banner_move/img/left.png";
+var rightarrowimage = "http://www.scil.or.kr/scil/skin/latest/banner_move/img/right.png";
+
+var leftrightslide=new Array()
+var finalslide=''
+
+    leftrightslide[0] = "&nbsp;&nbsp;<A HREF='http://www.kavrd.or.kr/kavrd/' target='_blank'><img src='http://www.scil.or.kr/scil/data/file/main_banner/thumb-3718696134_8m5bY6Dh_cd6dfdc4c33179be81281fdb1b87cac845d14fbf_125x35.jpg' border=0 width='125' height='35' ></A>&nbsp;&nbsp;";
+    leftrightslide[1] = "&nbsp;&nbsp;<A HREF='http://www.longtermcare.or.kr/' target='_blank'><img src='http://www.scil.or.kr/scil/data/file/main_banner/thumb-3718696134_QvfVdaye_c44344971196648f689727ea305238f9215ba4b4_125x35.jpg' border=0 width='125' height='35' ></A>&nbsp;&nbsp;";
+    leftrightslide[2] = "&nbsp;&nbsp;<A HREF='http://www.chest.or.kr/' target='_blank'><img src='http://www.scil.or.kr/scil/data/file/main_banner/thumb-3718696134_85KFHxLy_a90df643f197676f06d502ceda97fd86c974395b_125x35.jpg' border=0 width='125' height='35' ></A>&nbsp;&nbsp;";
+    leftrightslide[3] = "&nbsp;&nbsp;<A HREF='http://www.kappd.or.kr/' target='_blank'><img src='http://www.scil.or.kr/scil/data/file/main_banner/thumb-3718696134_TbrZRy3F_48146d93b2205d5728fd3a975d6c0abb61c49806_125x35.jpg' border=0 width='125' height='35' ></A>&nbsp;&nbsp;";
+    leftrightslide[4] = "&nbsp;&nbsp;<A HREF='https://www.kead.or.kr/' target='_blank'><img src='http://www.scil.or.kr/scil/data/file/main_banner/thumb-3718696134_rTg8VubF_dee5460dcef7e55bd340c1203b0d50a90d864ee9_125x35.jpg' border=0 width='125' height='35' ></A>&nbsp;&nbsp;";
+    leftrightslide[5] = "&nbsp;&nbsp;<A HREF='http://www.nia.or.kr/' target='_blank'><img src='http://www.scil.or.kr/scil/data/file/main_banner/thumb-3718696134_AD1afgul_bdfc172a7153dd0f5f23a8defd2b838672b8fa69_125x35.jpg' border=0 width='125' height='35' ></A>&nbsp;&nbsp;";
+    leftrightslide[6] = "&nbsp;&nbsp;<A HREF='http://www.mohw.go.kr/' target='_blank'><img src='http://www.scil.or.kr/scil/data/file/main_banner/thumb-3718696134_FDaeIYy6_dc2f5e46d78e2f16242761513b195a360eccd95a_125x35.jpg' border=0 width='125' height='35' ></A>&nbsp;&nbsp;";
+
+
+var imagegap=""
+var slideshowgap=0
+
+var copyspeed=slidespeed
+    leftrightslide='<nobr>'+leftrightslide.join(imagegap)+'</nobr>'
+var iedom=document.all||document.getElementById
+    if (iedom)
+        document.write('<span id="temp" style="visibility:hidden;position:absolute;top:-100px;left:-9000px">'+leftrightslide+'</span>')
+
+var actualwidth=''
+var cross_slide, ns_slide
+var righttime,lefttime
+
+function fillup(){
+    if (iedom){
+        cross_slide=document.getElementById? document.getElementById("test2") : document.all.test2
+        cross_slide2=document.getElementById? document.getElementById("test3") : document.all.test3
+        cross_slide.innerHTML=cross_slide2.innerHTML=leftrightslide
+        actualwidth=document.all? cross_slide.offsetWidth : document.getElementById("temp").offsetWidth
+        cross_slide2.style.left=actualwidth+slideshowgap+"px"
+    }
+    else if (document.layers){
+        ns_slide=document.ns_slidemenu.document.ns_slidemenuorange
+        ns_slide2=document.ns_slidemenu.document.ns_slidemenu3
+        ns_slide.document.write(leftrightslide)
+        ns_slide.document.close()
+        actualwidth=ns_slide.document.width
+        ns_slide2.left=actualwidth+slideshowgap
+        ns_slide2.document.write(leftrightslide)
+        ns_slide2.document.close()
+    }
+    lefttime=setInterval("slideleft()",30)
+}
+window.onload=fillup
+
+function slideleft(){
+    if (iedom){
+    if (parseInt(cross_slide.style.left)>(actualwidth*(-1)+8))
+        cross_slide.style.left=parseInt(cross_slide.style.left)-copyspeed+"px"
+    else
+        cross_slide.style.left=parseInt(cross_slide2.style.left)+actualwidth+slideshowgap+"px"
+    if (parseInt(cross_slide2.style.left)>(actualwidth*(-1)+8))
+        cross_slide2.style.left=parseInt(cross_slide2.style.left)-copyspeed+"px"
+    else
+        cross_slide2.style.left=parseInt(cross_slide.style.left)+actualwidth+slideshowgap+"px"
+    }
+    else if (document.layers){
+    if (ns_slide.left>(actualwidth*(-1)+8))
+        ns_slide.left-=copyspeed
+    else
+        ns_slide.left=ns_slide2.left+actualwidth+slideshowgap
+    if (ns_slide2.left>(actualwidth*(-1)+8))
+        ns_slide2.left-=copyspeed
+    else
+        ns_slide2.left=ns_slide.left+actualwidth+slideshowgap
+    }
+}
+
+function slideright(){
+    if (iedom){
+    if (parseInt(cross_slide.style.left)<(actualwidth+8))
+        cross_slide.style.left=parseInt(cross_slide.style.left)+copyspeed+"px"
+    else
+        cross_slide.style.left=parseInt(cross_slide2.style.left)+actualwidth*(-1)+slideshowgap+"px"
+    if (parseInt(cross_slide2.style.left)<(actualwidth+8))
+        cross_slide2.style.left=parseInt(cross_slide2.style.left)+copyspeed+"px"
+    else
+        cross_slide2.style.left=parseInt(cross_slide.style.left)+actualwidth*(-1)+slideshowgap+"px"
+    }
+    else if (document.layers){
+    if (ns_slide.left>(actualwidth*(-1)+8))
+        ns_slide.left-=copyspeed
+    else
+        ns_slide.left=ns_slide2.left+actualwidth+slideshowgap
+    if (ns_slide2.left>(actualwidth*(-1)+8))
+        ns_slide2.left-=copyspeed
+    else
+        ns_slide2.left=ns_slide.left+actualwidth+slideshowgap
+    }
+}
+
+function right(){
+    if(lefttime){
+        clearInterval(lefttime)
+        clearInterval(righttime)
+        righttime=setInterval("slideright()",30)  
+    }
+}
+
+function left(){
+    if(righttime){
+        clearInterval(lefttime)
+        clearInterval(righttime)
+        lefttime=setInterval("slideleft()",30)  
+    }
+}
+    document.write('<table width='+sliderwidth+' border="0" cellspacing="0" cellpadding="0">');
+    document.write('<tr><td align=left valign=middle width=35><img src='+leftarrowimage+' onMouseover="left(); copyspeed=2" onMouseout="copyspeed=1" style="cursor:hand"></td>')
+
+
+    if (iedom||document.layers){
+        with (document){
+            document.write('<td>')
+    if (iedom){
+        write('<div style="position:relative;width:'+sliderwidth+';height:'+sliderheight+';overflow:hidden">')
+        write('<div style="position:absolute;width:'+sliderwidth+';height:'+sliderheight+';background-color:'+slidebgcolor+'" onMouseover="copyspeed=0" onMouseout="copyspeed=1">')
+        write('<div id="test2" style="position:absolute;left:0px;top:0px"></div>')
+        write('<div id="test3" style="position:absolute;left:-1000px;top:0px"></div>')
+        write('</div></div>')
+    }
+    else if (document.layers){
+        write('<ilayer width='+sliderwidth+' height='+sliderheight+' name="ns_slidemenu" bgColor='+slidebgcolor+'>')
+        write('<layer name="ns_slidemenuorange" left=0 top=0 onMouseover="copyspeed=0" onMouseout="copyspeed=slidespeed"></layer>')
+        write('<layer name="ns_slidemenu3" left=0 top=0 onMouseover="copyspeed=0" onMouseout="copyspeed=slidespeed"></layer>')
+        write('</ilayer>')
+    }
+    document.write('</td>')
+    }
+}
+
+document.write('<td width="35" align=right valign=middle><img src='+rightarrowimage+' onMouseover="right();copyspeed=2" onMouseout="copyspeed=1" style="cursor:hand"></td></tr></table>')
+
+</script>  </div>
+-->
+
+  <div style="width:1020px; margin:0 auto; position:relative; padding:20px 0px;">
+  <table width="1020" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center"><a href="http://www.mohw.go.kr/" target="_blank"><img src="images/roll_banner_01.jpg" alt="" border="0" /></a></td>
+      <td align="center"><a href="http://disability.seoul.go.kr/" target="_blank"><img src="images/roll_banner_02.jpg" alt="" border="0" /></a></td>
+      <td align="center"><a href="http://www.songpa.go.kr/" target="_blank"><img src="images/roll_banner_03.jpg" alt="" border="0" /></a></td>
+      <td align="center"><a href="http://www.socialservice.or.kr/" target="_blank"><img src="images/roll_banner_04.jpg" alt="" border="0" /></a></td>
+      <td align="center"><a href="http://www.ablenews.co.kr/" target="_blank"><img src="images/roll_banner_05.jpg" alt="" border="0" /></a></td>
+      <td align="center"><a href="http://www.cowalknews.co.kr/" target="_blank"><img src="images/roll_banner_06.jpg" alt="" border="0" /></a></td>
+      <td align="center"><a href="http://www.beminor.com/" target="_blank"><img src="images/roll_banner_07.jpg" alt="" border="0" /></a></td>
+      <td align="center"><a href="http://www.nps.or.kr/" target="_blank"><img src="images/roll_banner_08.jpg" alt="" border="0" /></a></td>
+    </tr>
+  </table>
+  </div>
+</div>
+
+<!-- 내용 끝 -->
+
+
+<!-- 하단 시작 { -->
+
+<div id="layout_bottom">
+  <div id="layout_privacy">
+    <a href="http://www.scil.or.kr/scil/sub22_02.php">이용약관</a> ㅣ <a href="http://www.scil.or.kr/scil/sub22_01.php">개인정보보호정책</a> ㅣ <a href="http://www.scil.or.kr/scil/sub22_03.php">이메일수집거부</a>
+  </div>
+  <div id="layout_bottom_in">
+    <div id="layout_bottom_logo"><img src="http://www.scil.or.kr/scil/images/copy_logo.png" alt="서울장애인자립생활센터"></div>
+    <div id="layout_bottom_copy">
+	  [05768] 서울특별시 송파구 오금로 507 거여빌딩 6층 &nbsp;&nbsp; 전화 : 02-404-0920 &nbsp;&nbsp; 팩스 : 02-404-0930 &nbsp;&nbsp; 이메일: seoulcil@hanmail.net<br />
+      Copyright &copy; 2016 <span class="copy_text">서울장애인자립생활센터</span> All rights reserved. &nbsp;&nbsp; 홈제작 <a href="http://www.fivetop.co.kr" target="_blank">www.fivetop.co.kr</a>
+	</div>
+  </div>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BFE3H5N4CJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BFE3H5N4CJ');
+</script>
+<!-- } 하단 끝 -->
+
+<script>
+$(function() {
+    // 폰트 리사이즈 쿠키있으면 실행
+    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+});
+</script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+</body>
+</html>
