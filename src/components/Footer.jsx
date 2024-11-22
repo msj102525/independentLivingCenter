@@ -1,15 +1,63 @@
+import React from "react";
+
 export default function Footer() {
-    return (
-      <footer className="bg-gray-800 text-white p-4 text-center">
-        <div className="container max-w-screen-xl mx-auto">
-          <p>&copy; 2024 장애인 자립생활센터. All rights reserved.</p>
-          <ul className="flex justify-center space-x-4 mt-2">
-            <li><a href="#" className="hover:underline">이용약관</a></li>
-            <li><a href="#" className="hover:underline">개인정보처리방침</a></li>
-            <li><a href="#" className="hover:underline">이메일무단수집거부</a></li>
-          </ul>
+  return (
+    <footer className="bg-gray-100 py-6 border-t">
+      <div className="container mx-auto px-4">
+        {/* 상단 연락처 및 주소 */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+          <div className="mb-4 md:mb-0">
+            <p className="text-sm text-gray-700">
+              <strong>주소:</strong> 서울특별시 강남구 역삼동 123-45 장애인 자립생활센터
+            </p>
+            <p className="text-sm text-gray-700">
+              <strong>전화:</strong> 02-1234-5678 | <strong>팩스:</strong> 02-8765-4321
+            </p>
+            <p className="text-sm text-gray-700">
+              <strong>이메일:</strong> support@example.com
+            </p>
+          </div>
+          {/* SNS 및 외부 링크 */}
+          <div className="flex space-x-4">
+            <a href="#" className="text-sm text-gray-500 hover:text-gray-900">
+              Facebook
+            </a>
+            <a href="#" className="text-sm text-gray-500 hover:text-gray-900">
+              Twitter
+            </a>
+            <a href="#" className="text-sm text-gray-500 hover:text-gray-900">
+              Instagram
+            </a>
+          </div>
         </div>
-      </footer>
-    );
-  }
-  
+
+        {/* 하단 저작권 및 정책 */}
+        <div className="mt-6 border-t pt-4 text-center">
+          <p className="text-xs text-gray-500">
+            © 2024 장애인 자립생활센터. All rights reserved.
+          </p>
+          <div className="flex justify-center space-x-6 mt-2">
+            <a
+              href="#"
+              className="text-xs text-gray-500 hover:text-gray-900 underline"
+            >
+              이용약관
+            </a>
+            <a
+              href="#"
+              className="text-xs text-gray-500 hover:text-gray-900 underline"
+            >
+              개인정보처리방침
+            </a>
+            <a
+              href="#"
+              className="text-xs text-gray-500 hover:text-gray-900 underline"
+            >
+              이메일무단수집거부
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

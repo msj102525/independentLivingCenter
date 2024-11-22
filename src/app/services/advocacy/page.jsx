@@ -1,19 +1,28 @@
 export default function Advocacy() {
   return (
-    <section id="services" className="py-12  text-gray-800 ">
-      <div className="container max-w-screen-xl mx-auto px-4 max-w-screen-xl">
-        <h2 className="text-3xl font-bold mb-4">권익옹호</h2>
-        <p className="mb-6">
-          장애인 자립생활센터는 장애인의 자립생활과 사회참여를 지원하는 비영리 단체입니다.
-        </p>
-
-        <div className="mb-8">
-          <h3 className="text-2xl font-semibold mb-2">기본이념</h3>
-          <ul className="list-disc pl-5 mb-4 space-y-2">
-            <li><strong>존엄성과 다양성 존중:</strong> 누구나 갖게 되는 당연한 권리이며 개인이 가진 정체성 및 특성으로 인해 구분되지 않는 권리입니다.</li>
-            <li><strong>역량강화:</strong> 개인이나 조직의 능력을 발전시키고, 최대한 활용할 수 있도록 지원하는 과정입니다.</li>
-            <li><strong>자기 결정권의 존중:</strong> 자기결정 능력을 가지고 있는 것이 아니라, 자신의 의지에 따라 주체적인 결정권을 행사할 수 있는 조건을 갖추는 것입니다.</li>
-          </ul>
+    <section id="services" className="py-12 text-gray-800">
+      <div className="container max-w-screen-xl mx-auto px-4">
+        {/* 상단 제목과 설명 */}
+        <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">권익옹호</h2>
+            <p className="mb-6">
+              장애인 자립생활센터는 장애인의 자립생활과 사회참여를 지원하는 비영리 단체입니다.
+            </p>
+            <img
+              src="/images/advocacy/advocacy0.jpg"
+              alt="권익옹호 활동 이미지"
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
+            <h3 className="text-2xl font-semibold mb-2">기본이념</h3>
+            <ul className="list-disc pl-5 mb-4 space-y-2">
+              <li><strong>존엄성과 다양성 존중:</strong> 누구나 갖게 되는 당연한 권리이며 개인이 가진 정체성 및 특성으로 인해 구분되지 않는 권리입니다.</li>
+              <li><strong>역량강화:</strong> 개인이나 조직의 능력을 발전시키고, 최대한 활용할 수 있도록 지원하는 과정입니다.</li>
+              <li><strong>자기 결정권의 존중:</strong> 자기결정 능력을 가지고 있는 것이 아니라, 자신의 의지에 따라 주체적인 결정권을 행사할 수 있는 조건을 갖추는 것입니다.</li>
+            </ul>
+          </div>
         </div>
 
         <div className="mb-8">
@@ -38,7 +47,7 @@ export default function Advocacy() {
           </p>
         </div>
 
-        {/* 기관 정보 추가 */}
+        {/* 기관 정보 */}
         <div className="mt-12">
           <h3 className="text-2xl font-semibold mb-4">유용한 기관 및 연락처</h3>
           <table className="min-w-full bg-white border border-gray-300">
