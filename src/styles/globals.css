@@ -10,21 +10,31 @@
   --foreground: #333;
 }
 
-@layer components {
-  .div-underline {
-    @apply relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:block after:w-full after:h-[2px] after:bg-[#D9D9D9];
-  }
-}
+
 
 /* 기본 스타일 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
   font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  html { 
+      font-size : 8px !important; 
+    }
+}
+
+@layer components {
+  .div-underline {
+    @apply relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:block after:w-full after:h-[2px] after:bg-[#D9D9D9];
+  }
 }

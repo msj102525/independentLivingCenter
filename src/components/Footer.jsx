@@ -8,13 +8,13 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <div className="mb-4 md:mb-0">
             <p className="text-sm text-gray-700">
-              <strong>주소:</strong> 서울특별시 강남구 역삼동 123-45 장애인 자립생활센터
+              주소: 서울특별시 강남구 역삼동 123-45 장애인 자립생활센터
             </p>
             <p className="text-sm text-gray-700">
-              <strong>전화:</strong> 02-1234-5678 | <strong>팩스:</strong> 02-8765-4321
+              전화: 02-1234-5678 | 팩스: 02-8765-4321
             </p>
             <p className="text-sm text-gray-700">
-              <strong>이메일:</strong> support@example.com
+              이메일: support@example.com
             </p>
           </div>
           {/* SNS 및 외부 링크 */}
