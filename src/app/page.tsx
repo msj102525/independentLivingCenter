@@ -1,11 +1,7 @@
 "use client"
-
 import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const Slider = dynamic(() => import('../components/Slider'), { ssr: false });
 
 const slides = [
   {
